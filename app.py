@@ -1,3 +1,5 @@
+from db import get_connection
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
