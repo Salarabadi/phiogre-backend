@@ -1,6 +1,6 @@
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os  # ← اضافه شده برای استفاده از PORT محیطی
 
 app = Flask(__name__)
 CORS(app)
@@ -23,7 +23,4 @@ def download_file(filename):
 @app.route("/api/investor/meeting", methods=["POST"])
 def schedule_meeting():
     data = request.get_json()
-    return jsonify({"message": "Meeting request submitted", "data": data}), 200
-
-if __name__ == "__main__":
-    app.run(debug=True)
+    return jsonify({"message": "Meeting requ
