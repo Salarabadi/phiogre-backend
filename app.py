@@ -23,4 +23,10 @@ def download_file(filename):
 @app.route("/api/investor/meeting", methods=["POST"])
 def schedule_meeting():
     data = request.get_json()
-    return jsonify({"message": "Meeting requ
+    return jsonify({"message": "Meeting request submitted", "data": data}), 200
+
+if __name__ == "__main__":
+    # 👇 این خط، پورت را از محیط دریافت می‌کند و برای Render لازم است
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
